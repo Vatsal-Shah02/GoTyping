@@ -15,7 +15,7 @@ http.listen(port, () => {
 // });
 
 // require("./db/conn");
-const Register = require("./models/registers")
+// const Register = require("./models/registers")
 
 
 const static_path= path.join(__dirname,"../public");
