@@ -14,7 +14,7 @@ http.listen(port, () => {
 //     console.log(`server is running at port no ${port}`);
 // });
 
-require("./db/conn");
+// require("./db/conn");
 const Register = require("./models/registers")
 
 
