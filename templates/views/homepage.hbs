@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GoTyping | Play and Learn</title>
+
+    <!-- Description meta tags -->
+    <meta name="description" content="This is a Multiplayer Typing games to play and practice." />
+
+    <!-- Keywords : Its not much important as google searches keywords by itself -->
+    <meta name="keywords" content="typing,learning,Multiplayer,gaming,games,fast,enjoying" />
+
+    <!-- Robots Tag : we are saying or giving permission to crawl -->
+    <!-- no index to crawl -->
+    <meta name="robots" content="index,follow" />
+
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+
+    <!--  ? All external links : -->
+    <!-- * 1 : Font awesome fonts link -->
+    <script src="https://kit.fontawesome.com/aefdb4fe4a.js" crossorigin="anonymous"></script>
+
+    <!-- 2 : down -->
+
+    <!-- ? All Internal links and Scripts -->
+    <!-- 0 : Client side server setup -->
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer src="js/clientSideScript.js"></script>
+    <link rel="stylesheet" href="css/default.css" />
+
+    <!-- 1 : selectionMenuContainer -->
+    <link rel="stylesheet" href="css/selectionMenuStyle.css" />
+    <link rel="stylesheet" href="css/buttonStyle.css" />
+    <script defer src="js/selectionMenuScript.js"></script>
+
+    <!-- 2 : Chat Room : -->
+    <link rel="stylesheet" href="css/chatRoom.css" />
+
+    <!-- 3 : Message popUpControl -->
+    <link rel="stylesheet" href="css/messagePopUp.css" />
+
+    <!-- 5 : graphGeneration :  -->
+    <link rel="stylesheet" href="css/graphStyle.css" />
+
+    <!-- 6 : mainContainer -->
+    <script defer src="js/mainContainerScript.js"></script>
+    <link rel="stylesheet" href="css/mainContainerStyle.css" />
+
+    <!-- 7 : countdown -->
+    <link rel="stylesheet" href="css/countdownContainerStyle.css" />
+</head>
+
+<body>
+    <!-- The below div is the selectionMenu div in which you can test typing speed or play a race with friends -->
+    <div class="selectionMenuContainer">
+        <div class="typingSvg" id="typingSvg"></div>
+        <!-- No script works when script is disabled-->
+        <noscript>Please enable JavaScript</noscript>
+
+        <h3>GoTyping <small style="font-size: 20px">VK-Limited</small></h3>
+        <p>
+            GoTyping is a speed testing, accuracy testing, and multiplayer gaming web application.<br> It
+            aims to offer paragraph writing, multiplayer gaming and speed testing
+        </p>
+
+        <div class="buttonContainer">
+            <a href="/speedtest" class="custom-btn btn-11"> Speed Test </a>
+            <a href="/register" class="custom-btn btn-11"> Play with Friends </a>
+            
+        </div>
+    </div>   
+</body>
+
+</html>
