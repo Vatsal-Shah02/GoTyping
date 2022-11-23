@@ -5,9 +5,9 @@ const hbs = require("hbs");
 const http = require("http").createServer(app);
 const port=process.env.PORT || 3000;
 const axios = require('axios')
-if(process.env.NODE_ENV !== 'production'){
-  require('dotenv').config()
-}
+// if(process.env.NODE_ENV !== 'production'){
+//   require('dotenv').config()
+// }
 
 http.listen(port, () => {
   console.log("listen on the port.");
