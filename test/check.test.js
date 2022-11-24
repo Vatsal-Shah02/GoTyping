@@ -134,6 +134,21 @@ describe('Sockets', function () {
 
     // testing goodness goes here
   });
+describe('Socket-Connections', () => {
+  it('should connect to sockets', () => {
+    console.log("1");
+    io.on("connection",(socket)=>{
+      console.log("2");
+      socket.on("disconnection",()=>{
+        console.log(socket.playerName);
+      })
+      console.log("3");
+      var status = socket.on("joiningAGame",("VATSAL-6","VATSAL","VATSAL"))
+      console.log("status: "+status, "Room ID"+socket.roomName)
+      expect(status).to.equal('roomExists')
+    })
+  });
+});
 describe('Socket-Chats',()=>{
     it('Should send message', ()=>{
         const msg="test string";
@@ -152,18 +167,3 @@ describe('Socket-Chats',()=>{
         
     })
 })
-describe('Socket-Connections', () => {
-  it('should connect to sockets', () => {
-    console.log("1");
-    io.on("connection",(socket)=>{
-      console.log("2");
-      socket.on("disconnection",()=>{
-        console.log(socket.playerName);
-      })
-      console.log("3");
-      var status = socket.on("joiningAGame",("VATSAL-6","VATSAL","VATSAL"))
-      console.log("status: "+status, "Room ID"+socket.roomName)
-      expect(status).to.equal('roomExists')
-    })
-  });
-});
