@@ -10,7 +10,7 @@ const { Server } = require("socket.io");
 const Client = require("socket.io-client");
 const assert = require("chai").assert;
 
-describe("my awesome project", () => {
+describe("Client-Server Connection", () => {
   let io, serverSocket, clientSocket;
 
   before((done) => {
