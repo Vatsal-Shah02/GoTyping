@@ -167,3 +167,8 @@ describe('Socket-Chats',()=>{
         done();
     })
 })
+after(function(done){
+  this.timeout(60000)
+  setTimeout(done,50000)
+  process.exit();
+});
