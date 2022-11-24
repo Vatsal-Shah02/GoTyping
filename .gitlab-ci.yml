@@ -8,12 +8,14 @@ build-job:       # This job runs in the build stage, which runs first.
   script:
     - echo "Compiling the code..."
     - echo "Compile complete."
+    - npm run build
 
 unit-test-job:   # This job runs in the test stage.
   stage: test    # It only starts when the job in the build stage completes successfully.
   script:
     - echo "Running unit tests... This will take about 60 seconds."
     - sleep 60
+    - npm run test
     - echo "Code coverage is 90%"
 
 lint-test-job:   # This job also runs in the test stage.
