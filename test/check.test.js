@@ -152,7 +152,7 @@ describe('Socket-Chats',()=>{
         
     })
 })
-describe('Sockets new', () => {
+describe('Socket-Connections', () => {
   it('should connect to sockets', () => {
     console.log("1");
     io.on("connection",(socket)=>{
