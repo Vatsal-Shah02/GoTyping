@@ -150,7 +150,7 @@ describe('Socket-Connections', () => {
   });
 });
 describe('Socket-Chats',()=>{
-    it('Should send message', ()=>{
+    it('Should send message', (done)=>{
         const msg="test string";
         const client1 = io.connect(socketURL)
         client1.on('connect', ()=>{
@@ -164,7 +164,6 @@ describe('Socket-Chats',()=>{
                 })
             })
         })
-        
+        done();
     })
 })
-process.exit()
