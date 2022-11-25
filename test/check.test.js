@@ -8,7 +8,7 @@ before(function(done){
 })
 console.log("Frontend Unit Testing:")
 describe("POST log users in", () => {
-    const tempUser='{"email": "vatsalshah1902@gmail.com","password": "123"}';
+    const tempUser='{"email": "vatsalshah1902@gmail.com","password": "1234"}';
     const tempUser1='{"email": "vatsalshah1902@gmail.com","password": "12394"}';
     const jsonobj=JSON.parse(tempUser);
     const jsonobj1=JSON.parse(tempUser1);
