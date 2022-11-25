@@ -37,7 +37,7 @@ describe("Test Cases", () => {
   });
   describe("POST register users into database", () => {
 
-    const tempUser1 = '{"username": "newuser@gmail.com","password": "123456"}';
+    const tempUser1 = '{"username": "newuser8@gmail.com","password": "123456"}';
     const obj1 = JSON.parse(tempUser1);
     it("should register a new user", (done) => {
       request(app)
