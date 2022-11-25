@@ -29,6 +29,9 @@ describe("Client-Server Connection", () => {
   after(() => {
     io.close();
     clientSocket.close();
+    // setTimeout(done, 5000)
+    process.exit();
+
   });
 
   it("should work", (done) => {
@@ -49,3 +52,8 @@ describe("Client-Server Connection", () => {
     });
   });
 });
+// after(function (done) {
+//   // this.timeout(60000)
+//   setTimeout(done, 5000)
+//   process.exit();
+// });
