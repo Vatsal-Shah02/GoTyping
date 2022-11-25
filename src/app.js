@@ -60,7 +60,9 @@ app.post("/register",async(req,res)=>{
             password : req.body.password
         })
         const registerd =await registerUser.save();
+
         res.status(201).render("index")
+        alert("Log in successful")
     } catch (error) {
         res.status(400).send(error);
     }

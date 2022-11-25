@@ -8,7 +8,7 @@ before(function(done){
 })
 console.log("Frontend Unit Testing:")
 describe("POST log users in", () => {
-    const tempUser='{"email": "vatsalshah1902@gmail.com","password": "1234"}';
+    const tempUser='{"email": "vatsalshah1902@gmail.com","password": "123"}';
     const tempUser1='{"email": "vatsalshah1902@gmail.com","password": "12394"}';
     const jsonobj=JSON.parse(tempUser);
     const jsonobj1=JSON.parse(tempUser1);
@@ -73,6 +73,7 @@ describe('Calling text generation API', function(){
         let res= await APIResponse(category);
         console.log("Text generated: "+res.value);
         expect(res != null).equal(true);
+        
     });
 });
 const http = require("http").createServer(app);
@@ -86,7 +87,7 @@ var options ={
 
 describe('Sockets', function () {  
     var client1, client2, client3;
-    it('should host a room', () => {
+    it('should host a room', (done) => {
         client3=io.connect(socketURL,options);
         client3.on('chat-message', function(msg){
             expect(msg).to.equal('test');
@@ -99,8 +100,9 @@ describe('Sockets', function () {
            client3.emit('chat-message',"test");
       
           });
+          done();
     });
-    it('should join a room', function () {  
+    it('should join a room', function (done) {  
 
         // Set up client1 connection
         client1 = io.connect(socketURL, options);
@@ -130,12 +132,13 @@ describe('Sockets', function () {
           });
     
         });
+        done();
       });
 
     // testing goodness goes here
-  });
+});
 describe('Socket-Connections', () => {
-  it('should connect to sockets', () => {
+  it('should connect to sockets', (done) => {
     console.log("1");
     io.on("connection",(socket)=>{
       console.log("2");
@@ -147,6 +150,7 @@ describe('Socket-Connections', () => {
       console.log("status: "+status, "Room ID"+socket.roomName)
       expect(status).to.equal('roomExists')
     })
+    done();
   });
 });
 describe('Socket-Chats',()=>{
@@ -166,9 +170,9 @@ describe('Socket-Chats',()=>{
         })
         done();
     })
-})
-// after(function(done){
-//   this.timeout(60000)
-//   setTimeout(done,50000)
-//   process.exit();
-// });
+});
+after(function(done){
+  this.timeout(60000)
+  setTimeout(done,50000)
+  process.exit();
+});
