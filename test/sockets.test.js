@@ -30,7 +30,7 @@ describe("Client-Server Connection", () => {
     io.close();
     clientSocket.close();
     // setTimeout(done, 5000)
-    process.exit();
+    // process.exit();
 
   });
 

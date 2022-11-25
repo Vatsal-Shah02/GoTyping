@@ -137,39 +137,39 @@ describe("Test Cases", () => {
 
     // testing goodness goes here
   });
-  describe('Socket-Connections', () => {
-    it('should connect to sockets', (done) => {
-      console.log("1");
-      io.on("connection", (socket) => {
-        console.log("2");
-        socket.on("disconnection", () => {
-          console.log(socket.playerName);
-        })
-        console.log("3");
-        var status = socket.on("joiningAGame", ("VATSAL-6", "VATSAL", "VATSAL"))
-        console.log("status: " + status, "Room ID" + socket.roomName)
-        expect(status).to.equal('roomExists')
-      })
-      done();
-    });
-  });
-  describe('Socket-Chats', () => {
-    it('Should send message', (done) => {
-      const msg = "test string";
-      const client1 = io.connect(socketURL)
-      client1.on('connect', () => {
-        client1.emit('new-user-joined', ("vatsal"))
-        const client2 = io.connect(socketURL, options)
-        client2.on('connect', () => {
-          client2.emit('new-user-joined', ("vats"))
-          client1.emit('send-message', msg)
-          client2.on('receive-message', (res) => {
-            expect(res.message).to.equal('test string')
-          })
-        })
-      })
-      done();
-    })
-  });
+//   describe('Socket-Connections', () => {
+//     it('should connect to sockets', (done) => {
+      
+//       io.on("connection", (socket) => {
+        
+//         socket.on("disconnection", () => {
+//           console.log(socket.playerName);
+//         })
+//         console.log("3");
+//         var status = socket.on("joiningAGame", ("VATSAL-6", "VATSAL", "VATSAL"))
+//         console.log("status: " + status, "Room ID" + socket.roomName)
+//         expect(status).to.equal('roomExists')
+//       })
+//       done();
+//     });
+//   });
+//   describe('Socket-Chats', () => {
+//     it('Should send message', (done) => {
+//       const msg = "test string";
+//       const client1 = io.connect(socketURL)
+//       client1.on('connect', () => {
+//         client1.emit('new-user-joined', ("vatsal"))
+//         const client2 = io.connect(socketURL, options)
+//         client2.on('connect', () => {
+//           client2.emit('new-user-joined', ("vats"))
+//           client1.emit('send-message', msg)
+//           client2.on('receive-message', (res) => {
+//             expect(res.message).to.equal('test string')
+//           })
+//         })
+//       })
+//       done();
+//     })
+//   });
   
 });
