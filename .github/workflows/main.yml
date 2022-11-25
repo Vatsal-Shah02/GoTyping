@@ -16,11 +16,12 @@ jobs:
           heroku_app_name: "gotyping" #Must be unique in Heroku
           heroku_email: "vatsalshah1902@gmail.com"
           procfile:"web: npm run start"
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Installing Dependencies
-        run: npm install
-      - name: Running Tests
-        run: npm test
+          run: npm test
+  # test:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     # - uses: actions/checkout@v2
+  #     - name: Installing Dependencies
+  #       run: npm install
+  #     - name: Running Tests
+  #       run: npm test
